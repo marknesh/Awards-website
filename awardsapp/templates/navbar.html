@@ -1,0 +1,61 @@
+{% load static %}
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="navbar navbar-dark bg-dark">
+       <div class="col-sm-6 col-md-6">
+           <h3 style="color:white">AWARDS</h3>
+
+            {% if user.is_authenticated %}
+            <ul>
+                   <li class="dropdown">
+                <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
+                          <span class="caret"></span>
+                      </a>
+
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="{%url 'homepage'%}">Home</a>
+                  </li>
+                      <li>
+
+                  </li>
+                  <li>
+                    <a href="/accounts/password/change">Change Password</a>
+                  </li>
+                  <li>
+<!--                    <a href="/logout">Logout</a>-->
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            </ul>
+
+
+          </div>
+</div>
+     <div class="container-fluid">
+    <div class="navbar-header">
+
+    </div>
+     <div class="col-sm-4 col-md-4 navbar-right">
+
+      </div>
+  </div>
+    {% else %}
+
+
+            {% endif %}
+
+</nav>
+
+
+
+</body>
+
+</html>

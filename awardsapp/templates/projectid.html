@@ -1,0 +1,35 @@
+{%extends "base.html"%}
+
+{% block content %}
+{{block.super}}
+{% load bootstrap4 %}
+{% load static %}
+
+
+
+{% block styles %}
+{% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/posted.css' %}">
+{% endblock %}
+<body>
+<div class="container">
+<div class="row">
+
+
+    <div class="col-md-12">
+<div class="image">
+        <a href="/">Back</a>
+    <img src="{{project.project_photo.url}} "  class="img-responsive" >
+</div> <a href="{% url 'update_projects'%}"><button class="btn btn-primary">Edit Project</button></a>&nbsp;&nbsp;
+
+
+          <p>{{project.project_name}}</p>
+
+    </div>
+
+
+</div>
+</div>
+
+</body>
+{% endblock %}

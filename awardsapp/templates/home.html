@@ -1,11 +1,30 @@
-{%extends "base.html"%}
-<html lang="en">
+{% extends 'base.html' %}
+{% block content %}
+{{block.super}}
+{% load bootstrap4 %}
+{% load static %}
+
+
+
+{% block styles %}
+{% bootstrap_css %}
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+{% endblock %}
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     Awards
 </head>
 <body>
+<ul>
+
+{% for projects in projects %}
+    <li>{{projects.project_name}}</li>
+{% endfor %}
+
+</ul>
 
 </body>
-</html>
+{% endblock %}

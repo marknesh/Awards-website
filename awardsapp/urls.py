@@ -9,7 +9,7 @@ urlpatterns = [
     re_path(r'^update/project', views.updatemyprojects, name='update_projects'),
     path('profile/', views.myprofile, name='profile'),
     re_path(r'^project/(\d+)', views.editproject, name='article'),
-    path('search/', views.search_user, name='search_results'),
+    path('search/', views.search_project, name='search_results'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

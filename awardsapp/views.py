@@ -7,7 +7,7 @@ from . models import Profile,Projects
 def homepage(request):
     projects=Projects.objects.all()
     return  render(request, 'home.html',{"projects":projects})
-    return  redirect('/accounts/login')
+
 @login_required
 def updatemyprofile(request):
     current_user = request.user
@@ -90,7 +90,7 @@ def updatemyprojects(request):
     return render(request,'createproject.html',{"current_user":current_user,"form":form})
 
 
-
+@login_required
 def editproject(request,projectid):
     current_user=request.user
     try:
@@ -101,7 +101,7 @@ def editproject(request,projectid):
 
 
 
-def search_user(request):
+def search_project(request):
     if 'name' in request.GET and request.GET["name"]:
         search_term=request.GET.get("name")
         searchednames=Projects.search_project(search_term)

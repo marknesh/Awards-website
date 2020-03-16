@@ -25,7 +25,7 @@
 
 {% for projects in projects %}
        <div class="col-sm-12 col-md-5 col-lg-4">
-  <img src="{{projects.project_photo.url}}" class="img-responsive" width="300" height="200" style="padding:20px"  data-toggle="modal" data-target="#myModal">
+  data-toggle="modal" data-target="#myModal"<img src="{{projects.project_photo.url}}" class="img-responsive" width="300" height="200" style="padding:20px">
            <br>
            <a  href="project/{{projects.id}}">{{projects.project_name}}</a>
        <a target="_blank" href="{{projects.project_link}}" ><input type="button" value="View live project" class="btn btn-warning"></a>

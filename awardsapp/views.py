@@ -99,4 +99,17 @@ def editproject(request,projectid):
         raise Http404()
     return render(request, "projectid.html", {"project": project,"current_user":current_user})
 
+
+
+def search_user(request):
+    if 'name' in request.GET and request.GET["name"]:
+        search_term=request.GET.get("name")
+        searchednames=Projects.search_project(search_term)
+        message=f"{search_term}"
+        return render(request,"search.html",{"message":message,"searched":searchednames})
+
+    else:
+        message="you haven't searched"
+    return render(request,"search.html",{"message":message})
+
 # Create your views here.

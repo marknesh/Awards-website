@@ -1,0 +1,36 @@
+{%extends 'base.html'%}
+{% block content %}{{block.super}}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block styles %}
+{% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/posted.css' %}">
+{% endblock %}
+
+<div class="container">
+
+  <div class="row">
+    {% if searched%}
+      <h2>Found project {{message}}</h2>
+    {% else %}
+      <h2> Found 0 projects for the search term {{message}}</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+
+  {% if searched %}
+      {% for search in searched %}
+
+      <div class="col-sm-6 col-md-3">
+       <img src="{{search.profile_photo.url}}" class="img-responsive" >
+          <h1>{{search.project_name}}</h1>
+      </div>
+      {% endfor %}
+
+  {% endif %}
+  </div>
+</div>
+{% endblock %}

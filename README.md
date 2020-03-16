@@ -3,7 +3,7 @@
 Neshco-awards
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![codebeat badge](https://codebeat.co/badges/30baa9f3-0948-46d2-b044-c69a0d61f643)](https://codebeat.co/projects/github-com-marknesh-gallery-master)
+[![codebeat badge](https://codebeat.co/badges/4275b44b-a533-45e5-95a3-7a64d03a0ef6)](https://codebeat.co/projects/github-com-marknesh-awards-website-master)
 
 ## Visual Representation
 ![](images/visual.png)

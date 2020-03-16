@@ -11,9 +11,7 @@ The users can also post their own projects for the to be rated,but first they mu
 
 
 ## Features
-The main features include adding an image,category and location.
-I can add an image according to the category or location that i want.
-One can also delete an image or category.
+The main features include rating other people's projects ,creating the profile page and many others.
 
 
 
@@ -21,7 +19,7 @@ One can also delete an image or category.
 
 Django 3.0.3.
 Bootstrap
-Python
+Python3.6
 Postgresql
 
 # INSTALLATION
@@ -57,8 +55,8 @@ python3.6 manage.py test
 If you encounter any problems please feel free to contact me using the contacts provided  below incase you encounter any bugs.
 
 ## Support and contact details
-Contact us on : 072432432
-Email us on: neshinstagram@gmail.com
+Contact us on : 0734353535
+Email us on: neshco-awards@gmail.com
 
 ## Author
 [marknesh]

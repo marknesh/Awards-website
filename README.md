@@ -1,17 +1,22 @@
-[![codebeat badge](https://codebeat.co/badges/30baa9f3-0948-46d2-b044-c69a0d61f643)](https://codebeat.co/projects/github-com-marknesh-gallery-master)
+
 ## Application name
 Neshco-awards
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![codebeat badge](https://codebeat.co/badges/30baa9f3-0948-46d2-b044-c69a0d61f643)](https://codebeat.co/projects/github-com-marknesh-gallery-master)
+
+## Visual Representation
+![](images/visual.png)
 
 ## Description
-This application allow the users to rate other people's projects according the design,usability and scalability.
+This is basically an award's web application that allow the users to rate other people's projects according the design,usability and scalability.
 The users can also post their own projects for the to be rated,but first they must sign in.
 
 
 
 ## Features
 The main features include rating other people's projects ,creating the profile page and many others.
+The users must first login inorder to create their own profile page.
 
 
 

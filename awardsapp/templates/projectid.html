@@ -9,21 +9,29 @@
 
 {% block styles %}
 {% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'css/posted.css' %}">
+  <link rel="stylesheet" href="{% static 'css/projectid.css' %}">
 {% endblock %}
 <body>
 <div class="container">
 <div class="row">
+  <div class="col-sm-12 col-md-5 col-lg-6">
 
-
-    <div class="col-md-12">
-<div class="image">
         <a href="/">Back</a>
-    <img src="{{project.project_photo.url}} "  class="img-responsive" >
-</div> <a href="{% url 'update_projects'%}"><button class="btn btn-primary">Edit Project</button></a>&nbsp;&nbsp;
+    <br>
 
 
-          <p>{{project.project_name}}</p>
+
+
+    <img src="{{project.project_photo.url}} "  class="image" width="900" height="700">
+
+
+
+        {% autoescape on %}
+          <p>{{project.project_description| safe}}</p>
+        {% endautoescape %}
+            {% if project.user == current_user %}
+              <a href="{% url 'update_projects'%}"><button class="btn btn-primary">Edit Project</button></a>&nbsp;&nbsp;
+            {% endif %}
 
     </div>
 

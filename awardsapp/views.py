@@ -47,11 +47,11 @@ def myprofile(request):
     current_user = request.user
     try:
         profile = Profile.objects.get(user_id=current_user)
-        project=Projects.objects.all()
+        project=Projects.objects.filter(user_id=current_user)
 
     except:
         profile = Profile.objects.filter(user_id=current_user)
-        project = Projects.objects.all()
+        project = Projects.objects.filter(user_id=current_user)
     return render(request, 'profile.html',{"profile": profile,"project": project,  "current_user": current_user})
 
 
@@ -92,10 +92,11 @@ def updatemyprojects(request):
 
 
 def editproject(request,projectid):
-        try:
-            project = Projects.objects.get(id=projectid)
-        except Exception:
-            raise Http404()
-        return render(request, "projectid.html", {"project": project})
+    current_user=request.user
+    try:
+        project = Projects.objects.get(id=projectid)
+    except Exception:
+        raise Http404()
+    return render(request, "projectid.html", {"project": project,"current_user":current_user})
 
 # Create your views here.

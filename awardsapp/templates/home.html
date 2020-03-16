@@ -15,7 +15,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    Awards
 </head>
 <body>
 <div class="container">
@@ -25,11 +24,12 @@
 
 
 {% for projects in projects %}
-       <div class="col-4">
+       <div class="col-sm-12 col-md-5 col-lg-4">
 
            <img src="{{projects.project_photo.url}}" class="img-responsive" width="300" height="200" style="padding:20px">
            <br>
-             {{projects.project_name}}
+           <a  href="project/{{projects.id}}">{{projects.project_name}}</a>
+       <a target="_blank" href="{{projects.project_link}}" ><input type="button" value="View live project" class="btn btn-warning"></a>
            </div>
 {% endfor %}
     </div>

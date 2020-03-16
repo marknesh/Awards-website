@@ -38,7 +38,7 @@
     <div class="navbar-header">
 
     </div>
-     <div class="col-sm-4 col-md-4 navbar-right">
+     <div class="col-sm-4 col-md-4 col-lg-4 navbar-right">
          <form class="navbar-form" role="search" action="{% url 'search_results' %}">
 
           <div class="input-group">
@@ -55,13 +55,14 @@
 
             {% else %}
 
-
     <a href="/accounts/register"><input type="button" value="Register" class="btn btn-primary"></a>
      <a href="/accounts/login"><input type="button" value="Login" class="btn btn-success"></a>
 
-         <div class="col-md-12 rada">
+         <div class="container-fluid">
+    <div class="navbar-header">
 
-     <div class=" navbar-right">
+    </div>
+     <div class="col-sm-4 col-md-4 col-lg-4 rada">
          <form class="navbar-form" role="search" action="{% url 'search_results' %}">
 
           <div class="input-group">
@@ -75,6 +76,7 @@
 
       </div>
   </div>
+
 
             {% endif %}
 

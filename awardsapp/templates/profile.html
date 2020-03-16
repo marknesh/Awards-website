@@ -29,8 +29,10 @@
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="padding:10px;">
                 <h5 style="font-size:35px;">{{profile.username}}</h5>
 
+               {% autoescape on %}
+  <p>{{profile.bio|  safe}}</p>
+    {% endautoescape %}
 
-                             <p>{{profile.bio}}</p>
 
 
 
@@ -58,7 +60,7 @@
     <br>
               {{project.project_name}}
                {% autoescape on %}
-{{project.project_description| safe}}
+            <p>{{project.project_description| safe}}</p>
     {% endautoescape %}
 
 

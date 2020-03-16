@@ -30,7 +30,11 @@
            <a  href="project/{{projects.id}}">{{projects.project_name}}</a>
        <a target="_blank" href="{{projects.project_link}}" ><input type="button" value="View live project" class="btn btn-warning"></a>
            </div>
-      <!-- Modal -->
+{% endfor %}
+
+
+
+  <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
 
@@ -50,11 +54,6 @@
 
     </div>
   </div>
-{% endfor %}
-
-
-
-
 
     </div>
 

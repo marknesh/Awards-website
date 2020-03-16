@@ -25,3 +25,4 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('logout/', views.LogoutView.as_view()),
 ]
+

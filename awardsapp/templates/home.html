@@ -18,13 +18,26 @@
     Awards
 </head>
 <body>
-<ul>
+<div class="container">
+<div class="row">
+
+
+
 
 {% for projects in projects %}
-    <li>{{projects.project_name}}</li>
+       <div class="col-4">
+
+           <img src="{{projects.project_photo.url}}" class="img-responsive" width="300" height="200" style="padding:20px">
+           <br>
+             {{projects.project_name}}
+           </div>
 {% endfor %}
+    </div>
 
-</ul>
 
+
+
+
+</div>
 </body>
 {% endblock %}

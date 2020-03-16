@@ -35,3 +35,8 @@ class Projects(models.Model):
 
     def delete_project(self):
         self.delete()
+
+    @classmethod
+    def search_project(cls,search_term):
+        search=cls.objects.filter(project_name__icontains=search_term)
+        return search

@@ -33,6 +33,7 @@
                              <p>{{profile.bio}}</p>
 
 
+
             {% endif %}
 
                 {% if profile.user == current_user%}
@@ -49,14 +50,20 @@
 
 </div>
        <h1>PROJECTS</h1>
+    <div class="row">
           {% if project %}
             {% for project in project %}
+        <div class="col-md-4">
               {{project.project_name}}
             <a href="{{project.project_link}}">{{project.project_link}}</a>
+     <img src="{{project.project_photo.url}}" class="img-responsive" width="300" height="200" style="padding:20px">
+    <br>
      <a href="{% url 'update_projects'%}"><button class="btn btn-primary">Edit Project</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
             {% endfor %}
 
           {% endif %}
+    </div>
            {% if project%}
 
            {% else %} <h3>Project has not been created yet</h3>

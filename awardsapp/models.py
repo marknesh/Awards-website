@@ -23,7 +23,7 @@ class Projects(models.Model):
     project_photo=models.ImageField(upload_to='projectpics/')
     project_description=HTMLField()
     project_name = models.CharField(max_length=30,default='User')
-    project_link = HTMLField()
+    project_link = models.CharField(max_length=100,default='User')
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     profile_id = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
 

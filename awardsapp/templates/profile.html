@@ -17,8 +17,8 @@
 
 
             {% if profile %}
-
-                <img src={{profile.profile_photo.url}} class="img-responsive img-rounded" style="float:left; height:300px; width:300px;">
+    <br><br><br>
+      <img src={{profile.profile_photo.url}} class="img-responsive img-rounded" style="float:left; height:300px; width:300px;">
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="padding:10px;">
 
 
@@ -54,11 +54,18 @@
           {% if project %}
             {% for project in project %}
         <div class="col-md-4">
-              {{project.project_name}}
-            <a href="{{project.project_link}}">{{project.project_link}}</a>
-     <img src="{{project.project_photo.url}}" class="img-responsive" width="300" height="200" style="padding:20px">
+               <img src="{{project.project_photo.url}}" class="img-responsive" width="300" height="200" style="padding:20px">
     <br>
-     <a href="{% url 'update_projects'%}"><button class="btn btn-primary">Edit Project</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              {{project.project_name}}
+               {% autoescape on %}
+{{project.project_description| safe}}
+    {% endautoescape %}
+
+
+            <a target="_blank" href="{{project.project_link}}">{{project.project_link}}</a>
+
+
+     <a  href="{% url 'update_projects'%}"><button class="btn btn-primary" >Edit Project</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
             {% endfor %}
 
@@ -72,4 +79,6 @@
 </div>
 
 </body>
+<script>
+
 {% endblock %}

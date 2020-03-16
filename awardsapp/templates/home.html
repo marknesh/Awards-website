@@ -25,18 +25,12 @@
 
 {% for projects in projects %}
        <div class="col-sm-12 col-md-5 col-lg-4">
-
-           <a  href="project/{{projects.id}}"><img src="{{projects.project_photo.url}}" class="img-responsive" width="300" height="200" style="padding:20px"></a>
+  <img src="{{projects.project_photo.url}}" class="img-responsive" width="300" height="200" style="padding:20px"  data-toggle="modal" data-target="#myModal">
            <br>
            <a  href="project/{{projects.id}}">{{projects.project_name}}</a>
        <a target="_blank" href="{{projects.project_link}}" ><input type="button" value="View live project" class="btn btn-warning"></a>
            </div>
-{% endfor %}
-    <h2>Modal Example</h2>
-  <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-
-  <!-- Modal -->
+      <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
 
@@ -47,7 +41,7 @@
           <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-          <p>Some text in the modal.</p>
+            <a  target="_blank" href="{{projects.project_link}}">{{projects.project_link}}</a>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -56,6 +50,11 @@
 
     </div>
   </div>
+{% endfor %}
+
+
+
+
 
     </div>
 

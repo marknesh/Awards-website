@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'widget_tweaks',
+
     'tinymce',
     'bootstrap4',
     'awardsapp.apps.AwardsappConfig',
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'widget_tweaks',
 ]
 
 LOGIN_REDIRECT_URL='/'

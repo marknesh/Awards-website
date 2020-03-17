@@ -21,6 +21,7 @@ django-heroku==0.3.1
 django-regex==0.4.1
 django-registration==3.1
 django-tinymce==2.8.0
+django-widget-tweaks==1.4.8
 dominate==2.4.0
 Flask==1.1.1
 Flask-Bootstrap==3.3.7.1

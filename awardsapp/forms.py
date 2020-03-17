@@ -1,4 +1,7 @@
 from django import forms
+from django.forms import ModelForm
+from .models import Poll
+
 
 class ProfileUpdateForm(forms.Form):
     '''
@@ -17,3 +20,12 @@ class ProjectForm(forms.Form):
     project_photo = forms.ImageField(label = 'Profile Photo')
     project_link = forms.CharField(label='project link', max_length=30)
     project_description = forms.CharField(label='Project description',max_length=500)
+
+
+
+from .models import Poll
+
+class CreatePollForm(ModelForm):
+    class Meta:
+        model = Poll
+        fields = ['question', 'option_one', 'option_two', 'option_three']

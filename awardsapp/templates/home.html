@@ -30,6 +30,9 @@
            <br>
            <a  href="project/{{projects.id}}">{{projects.project_name}}</a>
        <a target="_blank" href="{{projects.project_link}}" ><input type="button" value="View live project" class="btn btn-warning"></a>
+
+               <a target="_blank" href="{% url 'home2'  %}"   class="badge badge-success">vote here</a>
+
            </div>
 {% endfor %}
     </div>

@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'widget_tweaks',
     'tinymce',
     'bootstrap4',
     'awardsapp.apps.AwardsappConfig',

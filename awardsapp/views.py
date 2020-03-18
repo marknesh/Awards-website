@@ -2,6 +2,9 @@ from django.shortcuts import render,redirect,Http404,HttpResponse
 from .forms import ProfileUpdateForm,ProjectForm,CreatePollForm
 from django.contrib.auth.decorators import login_required
 from . models import Profile,Projects,Poll
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import MerchSerializer,MerchSerializer2
 
 
 def homepage(request):
@@ -178,5 +181,18 @@ def search_project(request):
     else:
         message="you haven't searched"
     return render(request,"search.html",{"message":message})
+
+class MerchList(APIView):
+    def get(self, request, format=None):
+        all_merch = Profile.objects.all()
+        serializers = MerchSerializer(all_merch, many=True)
+        return Response(serializers.data)
+
+
+class MerchList2(APIView):
+    def get(self, request, format=None):
+        all_merch = Projects.objects.all()
+        serializers = MerchSerializer2(all_merch, many=True)
+        return Response(serializers.data)
 
 # Create your views here.

@@ -14,6 +14,8 @@ urlpatterns = [
     path('create/', views.create, name='create'),
     path('vote/<poll_id>/', views.vote, name='vote'),
     path('results/<poll_id>/', views.results, name='results'),
+    re_path(r'^api/profileAPI/$', views.MerchList.as_view(),name="profileapi"),
+    re_path(r'^api/projectAPI/$', views.MerchList2.as_view(), name="projectapi")
 
 ]
 if settings.DEBUG:

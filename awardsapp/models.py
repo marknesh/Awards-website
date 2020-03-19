@@ -2,6 +2,7 @@ from django.db import models
 from tinymce.models import HTMLField
 from django.contrib.auth.models import User
 
+
 # Create your models here.
 class Profile(models.Model):
     profile_photo=models.ImageField(upload_to='profilepics/')
@@ -47,6 +48,7 @@ class Poll(models.Model):
 class Projects(models.Model):
     project_photo=models.ImageField(upload_to='projectpics/')
     project_description=HTMLField()
+    pub_date = models.DateTimeField(auto_now_add=True,null=True)
     project_name = models.CharField(max_length=30,default='User')
     project_link = models.CharField(max_length=100,default='User')
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
@@ -64,11 +66,11 @@ class Projects(models.Model):
 
 
     @classmethod
+    def search_project(cls, name):
+        search = cls.objects.filter(project_name__icontains=name)
+        return search
 
     def get_project(cls,po):
         gett=cls.objects.filter(id=po)
         return gett
 
-    def search_project(cls,search_term):
-        search=cls.objects.filter(project_name__icontains=search_term)
-        return search

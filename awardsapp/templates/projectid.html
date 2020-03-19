@@ -28,9 +28,11 @@
 
         {% autoescape on %}
           <p>{{project.project_description| safe}}</p>
+
         {% endautoescape %}
+      <div class="badge badge-warning">posted:{{project.pub_date|timesince}} ago</div>
             {% if project.user == current_user %}
-              <a href="{% url 'update_projects'%}"><button class="btn btn-primary">Edit Project</button></a>&nbsp;&nbsp;
+              <a href="{% url 'update_projects' project.id %}"><button class="btn btn-primary">Edit Project</button></a>&nbsp;&nbsp;
             {% endif %}
 
     </div>

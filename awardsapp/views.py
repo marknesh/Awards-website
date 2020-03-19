@@ -8,7 +8,7 @@ from .serializer import MerchSerializer,MerchSerializer2
 
 
 def homepage(request):
-    projects=Projects.objects.all()
+    projects=Projects.objects.all().order_by('-pub_date')
     return  render(request, 'home.html',{"projects":projects})
 
 @login_required

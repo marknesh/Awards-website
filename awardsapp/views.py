@@ -126,38 +126,40 @@ def myprofile(request):
 
 
 @login_required
-def updatemyprojects(request):
-    current_user = request.user
-    try:
-        myprojects = Projects.objects.get(user_id = current_user.id)
-        if request.method == 'POST':
-            form = ProjectForm(request.POST,request.FILES)
+def createproject(request):
+    current_user=request.user
+    if request.method == 'POST':
+        form = ProjectForm(request.POST, request.FILES)
+        if form.is_valid():
+            createproject = Projects(project_name=form.cleaned_data['project_name'], project_description=form.cleaned_data['project_description'],
+                                    project_link=form.cleaned_data['project_link'], user=current_user,    project_photo=form.cleaned_data['project_photo'])
+            createproject.save_project()
 
-            if form.is_valid():
-                myprojects.project_photo = form.cleaned_data['project_photo']
-                myprojects.project_description= form.cleaned_data['project_description']
-                myprojects.project_link= form.cleaned_data['project_link']
-                myprojects.project_name = form.cleaned_data['project_name']
-                myprojects.save_project()
-                return redirect( myprofile )
-        else:
-            form = ProjectForm()
-    except:
-        if request.method == 'POST':
-            form = ProjectForm(request.POST,request.FILES)
+            return redirect(myprofile)
+    else:
+        form = ProjectForm()
 
-            if form.is_valid():
-                createproject= Projects(project_photo= form.cleaned_data['project_photo'],project_link= form.cleaned_data['project_link'],project_description= form.cleaned_data['project_description'],project_name= form.cleaned_data['project_name'],user = current_user)
-                createproject.save_project()
+    return render(request, 'createproject.html', {"form": form})
 
 
+@login_required
+def updatemyprojects(request,sasa):
+
+    myprojects=Projects.objects.get(id=sasa)
+    if request.method == 'POST':
+        form = ProjectForm(request.POST,request.FILES)
+        if form.is_valid():
+            myprojects.project_photo = form.cleaned_data['project_photo']
+            myprojects.project_description= form.cleaned_data['project_description']
+            myprojects.project_link= form.cleaned_data['project_link']
+            myprojects.project_name = form.cleaned_data['project_name']
+            myprojects.save_project()
+            return redirect( myprofile )
+    else:
+        form = ProjectForm()
 
 
-        else:
-            form = ProjectForm()
-
-
-    return render(request,'createproject.html',{"current_user":current_user,"form":form})
+    return render(request,'createproject.html',{"form":form})
 
 
 @login_required

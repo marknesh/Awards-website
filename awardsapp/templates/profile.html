@@ -39,7 +39,7 @@
             {% endif %}
 
                 {% if profile.user == current_user%}
-                <a href="{% url 'update_profile'%}"><button class="btn btn-primary">Edit Profile</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{% url 'update_profile' %}"><button class="btn btn-primary">Edit Profile</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                     <span class="glyphicon glyphicon-plus-sign" style="font-size:35px;"></span>
                 </a>
@@ -52,6 +52,8 @@
 
 </div>
        <h1>PROJECTS</h1>
+     <a  href="{% url 'create_project' %}"><button class="btn btn-primary" >Create Project</button></a>&nbsp;&nbsp;&nbsp;
+
     <div class="row">
           {% if project %}
             {% for project in project %}
@@ -67,7 +69,7 @@
             <a target="_blank" href="{{project.project_link}}">{{project.project_link}}</a>
 
 
-     <a  href="{% url 'update_projects'%}"><button class="btn btn-primary" >Edit Project</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <a  href="{% url 'update_projects' project.id %}"><button class="btn btn-primary" >Edit Project</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
             {% endfor %}
 
@@ -76,7 +78,7 @@
            {% if project%}
 
            {% else %} <h3>Project has not been created yet</h3>
-           <a href="{% url 'update_projects'%}"><button class="btn btn-primary">Create Project</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {% endif %}
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {% endif %}
 
 </div>
 

@@ -22,7 +22,7 @@
 
 
 
-    <img src="{{project.project_photo.url}} "  class="image" width="900" height="700">
+   {% load cloudinary %}{% cloudinary project.project_photo.public_id className="my-class" height=700 width=900 %}
 
 
 

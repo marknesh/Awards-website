@@ -32,9 +32,9 @@
       {% for search in searched %}
 
       <div class="col-sm-12 col-md-6">
-       <img src="{{search.profile_photo.url}}" class="img-responsive" >
+
           <h1>{{search.project_name}}</h1>
-           <img src="{{search.project_photo.url}} "  class="image" width="900" height="700">
+     {% load cloudinary %}{% cloudinary search.project_photo.public_id className="my-class" height=300 width=500 %}
       </div>
       {% endfor %}
 

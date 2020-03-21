@@ -55,9 +55,12 @@
      <a  href="{% url 'create_project' %}"><button class="btn btn-primary" >Create Project</button></a>&nbsp;&nbsp;&nbsp;
 
     <div class="row">
+
           {% if project %}
+
             {% for project in project %}
-        <div class="col-md-4">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="padding:10px;">
+
                <img src="{{project.project_photo.url}}" class="img-responsive" width="300" height="200" style="padding:20px">
     <br>
               {{project.project_name}}
@@ -79,6 +82,7 @@
 
            {% else %} <h3>Project has not been created yet</h3>
            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {% endif %}
+    </div>
 
 </div>
 

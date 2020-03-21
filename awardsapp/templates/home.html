@@ -26,7 +26,7 @@
 {% for projects in projects %}
        <div class="col-sm-12 col-md-5 col-lg-4">
 
-           <a  href="project/{{projects.id}}"><img src="{{projects.project_photo.url}}" class="img-responsive" width="300" height="200" style="padding:20px"></a>
+           <a  href="project/{{projects.id}}">{% load cloudinary %}{% cloudinary projects.project_photo.public_id className="my-class" height=200 width=300 %}
            <br>
            <a  href="project/{{projects.id}}">{{projects.project_name}}</a>
 

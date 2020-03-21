@@ -1,11 +1,11 @@
 from django.db import models
 from tinymce.models import HTMLField
 from django.contrib.auth.models import User
-
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Profile(models.Model):
-    profile_photo=models.ImageField(upload_to='profilepics/')
+    profile_photo=CloudinaryField('image')
     bio=HTMLField()
     username = models.CharField(max_length=30,default='User')
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
@@ -46,7 +46,7 @@ class Poll(models.Model):
         return self.option_one_count + self.option_two_count + self.option_three_count + self.option_four_count + self.option_five_count + self.option_six_count + self.option_seven_count+ self.option_nine_count + self.option_ten_count
 
 class Projects(models.Model):
-    project_photo=models.ImageField(upload_to='projectpics/')
+    project_photo=CloudinaryField('image')
     project_description=HTMLField()
     pub_date = models.DateTimeField(auto_now_add=True,null=True)
     project_name = models.CharField(max_length=30,default='User')
@@ -70,6 +70,7 @@ class Projects(models.Model):
         search = cls.objects.filter(project_name__icontains=name)
         return search
 
+    @classmethod
     def get_project(cls,po):
         gett=cls.objects.filter(id=po)
         return gett

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import cloudinary
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -33,7 +34,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'rest_framework',
-
+    'cloudinary',
     'tinymce',
     'bootstrap4',
     'awardsapp.apps.AwardsappConfig',
@@ -131,6 +132,13 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+cloudinary.config(
+    cloud_name = 'dfjpf16e3',
+    api_key = '616741327242619',
+    api_secret = 'CbIbI3yhTv9fDWsNflPcV-Re4tk'
+)
+
 
 
 # Static files (CSS, JavaScript, Images)

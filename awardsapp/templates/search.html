@@ -31,10 +31,13 @@
   {% if searched %}
       {% for search in searched %}
 
-      <div class="col-sm-12 col-md-6">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
 
-          <h1>{{search.project_name}}</h1>
-     {% load cloudinary %}{% cloudinary search.project_photo.public_id className="my-class" height=300 width=500 %}
+          <a href="{% url 'article' search.id %}" ><h1>{{search.project_name}}</h1></a>
+          <picture>
+               <a  href="{% url 'article' search.id %}"  >
+                   {% load cloudinary %}{% cloudinary search.project_photo.public_id className="my-class"  height=200 width=300%}</a>
+          </picture>
       </div>
       {% endfor %}
 
